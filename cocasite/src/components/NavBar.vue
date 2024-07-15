@@ -6,12 +6,12 @@
       </div>
       <div class="nav2">
         <h5 class="home"><a href="/">Home</a></h5>
-        <h5 class="about"><a href="about">About</a></h5>
-        <h5 class="blog"><a href="blog">Blog</a></h5>
-        <h5 class="pricing"><a href="pricing">Pricing</a></h5>
+        <h5 class="about"><router-link to="/about">About</router-link></h5>
+        <h5 class="blog"><router-link to="/blog">Blog</router-link></h5>
+        <h5 class="pricing"><router-link to="/pricing">Pricing</router-link></h5>
       </div>
       <div class="contactdiv">
-        <h5 class="contacth5"><a href="contact">Contact Us -></a></h5>
+        <h5 class="contacth5"><router-link to="/contact">Contact Us -></router-link></h5>
       </div>
     </div>
     <div class="nav-mob">
@@ -20,11 +20,11 @@
       </div>
       <Slide :isOpen="isOpen" @closeMenu="isOpen = false">
         <img src="../assets/logo.png" />
-        <h5 class="home-mob"><a href="/">Home</a></h5>
-        <h5 class="about-mob"><a href="about">About</a></h5>
-        <h5 class="blog-mob"><a href="blog">Blog</a></h5>
-        <h5 class="pricing-mob"><a href="pricing">Pricing</a></h5>
-        <h5 class="contact-mob"><a href="contact">Contact Us</a></h5>
+        <h5 class="home-mob"><router-link to="/">Home</router-link></h5>
+        <h5 class="about-mob"><router-link to="/about">About</router-link></h5>
+        <h5 class="blog-mob"><router-link to="/blog">Blog</router-link></h5>
+        <h5 class="pricing-mob"><router-link to="/pricing">Pricing</router-link></h5>
+        <h5 class="contact-mob"><router-link to="/contact">Contact Us</router-link></h5>
       </Slide>
       
     </div>
@@ -126,24 +126,18 @@ export default {
 @media (max-width: 920px) {
   .nav-mob {
     display: flex;
-    align-items: center;
     justify-content: space-between;
     max-width: 100%;
+    height: 45px;
     padding: 10px 20px;
   }
   .logo {
     width: 25px;
     height: 25px;
-    padding-left: 15px;
     scale: 0.9;
-    margin-top: 11.5px;
   }
   .nav-pc {
     display: none;
-  }
-  div.burger-menu {
-    margin-bottom: 12.5px;
-    margin-left: 100px;
   }
   a {
     margin-right: 25px;
@@ -178,10 +172,7 @@ div.bm-burger-button {
   width: 36px;
   height: 30px;
   left: 185px;
-  top: 36px;
-  display: flex;
-  justify-content: right;
-  cursor: pointer;
+  top: 25px;
 }
 div.bm-burger-bars {
   background-color: white;
