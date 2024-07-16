@@ -318,18 +318,18 @@ export default {
         height: 1px;
         border-radius: 100%;
         margin-top: 50px;
-        box-shadow: 150px 250px 275px 250px #E2F8F0B2;
+        box-shadow: 250px 350px 375px 350px #E2F8F0B2;
         opacity: 1;
     }
     .sales-light {
         width: 300px;
         height: 246px;
         padding: 20px 0px 0px 0px;
-        margin-left: 25px;
+        margin-left: 0px;
         margin-top: 25px;
         border-radius: 8px;
         opacity: 0px;
-        box-shadow: 250px 350px 475px 350px #E2F8F0B2;
+        box-shadow: 15px 15px 150px 1px #b3b3b3b2;
         background-color: rgb(255, 255, 255);
         position: absolute;
     }
@@ -341,7 +341,7 @@ export default {
         margin-top: -25px;
         border-radius: 8px;
         opacity: 0px;
-        box-shadow: 250px 350px 475px 350px #E2F8F0B2;
+        box-shadow: 15px 15px 150px 1px #b3b3b3b2;
         background-color: rgb(255, 255, 255);
         position: absolute;
     }
@@ -356,8 +356,8 @@ export default {
     }
     .header2 {
         display: flex;
-        width: 350px;
-        justify-content: left;
+        width: 100%;
+        justify-content: center;
     }
     .container {
         max-width: 100%;

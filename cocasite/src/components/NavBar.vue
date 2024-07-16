@@ -128,8 +128,6 @@ export default {
   }
   div.nav-mob {
     display: flex;
-    
-    width: 100px;
     height: 45px;
     padding: 10px 20px;
   }
