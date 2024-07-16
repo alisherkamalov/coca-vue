@@ -18,19 +18,19 @@
       <div class="logo">
         <img src="../assets/logo.png" />
       </div>
-      <Slide :isOpen="isOpen" @closeMenu="isOpen = false">
-        <img src="../assets/logo.png" />
-        <h5 class="home-mob"><router-link to="/">Home</router-link></h5>
-        <h5 class="about-mob"><router-link to="/about">About</router-link></h5>
-        <h5 class="blog-mob"><router-link to="/blog">Blog</router-link></h5>
-        <h5 class="pricing-mob"><router-link to="/pricing">Pricing</router-link></h5>
-        <h5 class="contact-mob"><router-link to="/contact">Contact Us</router-link></h5>
-      </Slide>
-      
+      <div class="burger-container">
+        <Slide :isOpen="isOpen" @closeMenu="isOpen = false">>
+          <img src="../assets/logo.png" />
+          <h5 class="home-mob"><router-link to="/">Home</router-link></h5>
+          <h5 class="about-mob"><router-link to="/about">About</router-link></h5>
+          <h5 class="blog-mob"><router-link to="/blog">Blog</router-link></h5>
+          <h5 class="pricing-mob"><router-link to="/pricing">Pricing</router-link></h5>
+          <h5 class="contact-mob"><router-link to="/contact">Contact Us</router-link></h5>
+        </Slide>
+      </div>
     </div>
   </nav>
 </template>
-
 <script>
 import { Slide } from 'vue3-burger-menu'
 export default {
@@ -46,8 +46,7 @@ export default {
     },
 };
 </script>
-
-<style lang=css>
+<style>
 @media (min-width: 921px) {
   a {
     color: black;
@@ -124,10 +123,13 @@ export default {
 }
 
 @media (max-width: 920px) {
-  .nav-mob {
-    display: flex;
-    justify-content: space-between;
+  .nav {
     max-width: 100%;
+  }
+  div.nav-mob {
+    display: flex;
+    
+    width: 100px;
     height: 45px;
     padding: 10px 20px;
   }
@@ -135,9 +137,13 @@ export default {
     width: 25px;
     height: 25px;
     scale: 0.9;
+    margin-top: 5px;
   }
   .nav-pc {
     display: none;
+  }
+  .burger-container {
+    margin-left: auto;
   }
   a {
     margin-right: 25px;
@@ -167,11 +173,18 @@ export default {
     font-family: "Inter", sans-serif;
     color: grey;
   }
+  h5.contact-mob {
+    margin-right: 35px;
+    font-weight: 500;
+    font-family: "Inter", sans-serif;
+    color: grey;
+    width: 200px;
+  }
 }
 div.bm-burger-button {
   width: 36px;
   height: 30px;
-  left: 185px;
+  left: 150px;
   top: 25px;
 }
 div.bm-burger-bars {
@@ -207,17 +220,18 @@ div.bm-menu {
 div.bm-overlay {
   background: white;
 }
-div.bm-item-list {
+nav.bm-item-list {
   color: white;
   margin-left: 10%;
   font-size: 20px;
 }
-div.bm-item-list > * {
+nav.bm-item-list > * {
   display: flex;
   text-decoration: none;
   padding: 0.7em;
+  color: white;
 }
-div.bm-item-list > * > span {
+nav.bm-item-list > * > span {
   margin-left: 10px;
   font-weight: 700;
   color: white;

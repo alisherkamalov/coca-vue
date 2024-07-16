@@ -8,39 +8,44 @@
                     <h1 class="text1header2">
                         Digitally forward creative
                     </h1>
-                    
                 </div>
-                
-            </div>
-            
-            <div class="textsheader2">
-                <div class="greyline">
-
+                <div class="textsheader2">
+                    <div class="headercontent1">
+                        <div class="greyline"></div>
+                        <h1 class="text2header2">
+                            When it comes to interactive marketing, we've got you covered. Be where the world is going
+                        </h1>
+                        <h1 class="text2header2-mob">
+                            Our biggest challenge is making sure we're always designing and building products that will help you run your business better.
+                        </h1>
+                    </div>
+                    <div class="inputemail">
+                        <input type="email" placeholder="Enter your email" class="field">
+                        <button class="emailbutton">
+                            <h3 class="emailbutton-h3">Try for free</h3>
+                        </button>
+                    </div>
                 </div>
-                <div>
-                    <h1 class="text2header2">
-                        When it comes to interactive marketing, we've got you covered. Be where the world is going
-                    </h1>
-                    <h1 class="text2header2-mob">
-                        Our biggest challenge is making sure we're always designing and building products that will help you run your business better.
-                    </h1>
-                </div>
-            
-                
-                
-            </div>
-            <div class="inputemail">
-                <input type="" placeholder="Enter your email" class="field">
-                <button class="emailbutton">
-                    <h3 class="emailbutton-h3">
-                        Try for free
-                    </h3>
-                </button>
             </div>
             <div class="contentheader2">
-                правая часть
+                <div class="blue-shadow"></div>
+                <div class="sales-light">
+                    <h5 class="sales-text1">
+                        Sales Report
+                    </h5>
+                    <div class="content-sales">
+                        <div class="sales-header">
+                            <div v-for="(product, index) in products" :key="index">
+                                <div class="cube" :style="`background-color: ${product.color}`">
+
+                                </div>
+                                <h6 class="text-product">{{ product.name }}</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="customer-growth"></div>
             </div>
-            
         </div>
     </div>
 </template>
@@ -48,16 +53,122 @@
 <script>
 export default {
     name: "TheHeader",
+    data() {
+        return {
+            products: [
+                {
+                    color: "blue",
+                    name: "My Sales",
+                },
+                {
+                    color: "red",
+                    name: "My Product"
+                }
+            ]
+        };
+    }
 };
 </script>
-<style>
-@media (min-width: 921px) {
+
+<style scoped>
+@media (min-width: 1080px) {
+    .blue-shadow {
+        position: relative;
+        width: 1px;
+        height: 1px;
+        border-radius: 100%;
+        margin-top: 50px;
+        box-shadow: 250px 350px 475px 350px #E2F8F0B2;
+        opacity: 1;
+    }
+    .text-product {
+        font-family: 'Inter', sans-serif;
+        font-weight: 400;
+        size: 14px;
+        top: -1px;
+        position: relative;
+        margin-right: 25px;
+    }
+    .blue-shadow {
+        position: relative;
+        width: 1px;
+        height: 1px;
+        border-radius: 100%;
+        margin-top: 50px;
+        box-shadow: 250px 350px 475px 350px #E2F8F0B2;
+        opacity: 1;
+    }
+    .text-competitor {
+        font-family: 'Inter', sans-serif;
+        font-weight: 400;
+        size: 14px;
+        top: -1px;
+        position: relative;
+        margin-right: 25px;
+    }
+    .sales-text1 {
+        font-size: 20px;
+        font-family: "Inter", sans-serif;
+        font-weight: 700;
+        margin-bottom: 5px;
+    }
+    .cube {
+        width: 12.2px;
+        height: 10px;
+        border-radius: 2px;
+        margin-right: 5px;
+    }
+    .sales-header {
+        display: flex;
+        width: 100%;
+        height: 25px;
+    }
+    .sales-header > div {
+        display: flex;
+    }
+    .content-sales {
+        width: 300px;
+        height: 200px;
+        display: block;
+        padding-top: 20px;
+    }
+    .sales-light {
+        width: 319px;
+        height: 246px;
+        padding: 20px 0px 0px 0px;
+        margin-right: 550px;
+        margin-top: 100px;
+        border-radius: 8px;
+        opacity: 0px;
+        padding-left: 20px;
+        display: block;
+        box-shadow: 15px 15px 100px 0.1px rgb(204, 204, 204);
+        background-color: white;
+        position: absolute;
+    }
+    .customer-growth {
+        width: 113px;
+        height: 120px;
+        padding: 16px 18px 16px 18px;
+        margin-left: 250px;
+        margin-top: 40px;
+        border-radius: 8px;
+        opacity: 0px;
+        box-shadow: 15px 15px 100px 0.1px rgb(204, 204, 204);
+        background-color: white;
+        position: absolute;
+    }
+    .headercontent1 {
+        justify-content: left;
+        display: flex;
+        width: 400px;
+    }
     .shadoworange {
         width: 1px;
         height: 1px;
         border-radius: 100%;
         margin-top: 50px;
-        box-shadow: 100px 50px 175px 150px #FA7515;
+        box-shadow: 150px 150px 175px 150px #FA7515;
         opacity: 0.2;
         position: relative;
     }
@@ -69,26 +180,24 @@ export default {
     .container {
         max-width: 1080px;
         width: 100%;
-    }
-    
-    .contentheader1 {
-        justify-content:left;
         display: flex;
     }
-    
+    .contentheader1 {
+        justify-content: left;
+        display: block;
+    }
     .contentheader2 {
         justify-content: right;
-        display: flex;
+        display: block;
     }
-    
     .text1header2 {
         font-family: "Inter", sans-serif;
-        font-size: 70px;
+        font-size: 60px;
         font-weight: 700;
         margin-top: 15px;
         margin-left: 20px;
-        max-width: 800px;
-        width: auto;
+        max-width: 600px;
+        min-width: 500px;
     }
     .text2header2 {
         font-family: "Inter", sans-serif;
@@ -96,9 +205,8 @@ export default {
         font-weight: 600;
         margin-top: 50px;
         margin-left: 20px;
-        max-width: 390px;
-        width: auto;
-        display: block;
+        min-width: 390px;
+        display: flex;
     }
     .text2header2-mob {
         display: none;
@@ -106,13 +214,13 @@ export default {
     .greyline {
         border: 0px;
         border-bottom: 2px solid grey;
-        width: 60px;
+        min-width: 60px;
         margin-left: 25px;
         margin-top: 55px;
         height: 10px;
     }
     .textsheader2 {
-        display: flex;
+        display: block;
     }
     .field {
         background-color: transparent;
@@ -120,13 +228,13 @@ export default {
         outline: 0px transparent;
         height: 47px;
         border-bottom: 1px solid grey;
-
     }
     .inputemail {
         max-width: 471px;
         margin-left: 50px;
         margin-top: 50px;
         scale: 1.1;
+        display: flex;
     }
     .emailbutton {
         height: 46px;
@@ -136,7 +244,11 @@ export default {
         width: 175px;
         background-color: black;
         border: 0px transparent;
-        
+        cursor: pointer;
+        transition: 500ms ease;
+    }
+    .emailbutton:active {
+        scale: 1;
     }
     .emailbutton-h3 {
         font-size: 16px;
@@ -144,11 +256,95 @@ export default {
         line-height: 24px;
         font-weight: 700;
     }
-    
-    
-    
 }
-@media (max-width: 920px) {
+
+@media (max-width: 1079px) {
+    .text-product {
+        font-family: 'Inter', sans-serif;
+        font-weight: 400;
+        size: 14px;
+        top: -1px;
+        position: relative;
+        margin-right: 10px;
+    }
+    .blue-shadow {
+        position: relative;
+        width: 1px;
+        height: 1px;
+        border-radius: 100%;
+        margin-top: 50px;
+        box-shadow: 250px 350px 475px 350px #E2F8F0B2;
+        opacity: 1;
+    }
+    .text-competitor {
+        font-family: 'Inter', sans-serif;
+        font-weight: 400;
+        size: 14px;
+        top: -1px;
+        position: relative;
+        margin-right: 25px;
+    }
+    .sales-text1 {
+        font-size: 20px;
+        font-family: "Inter", sans-serif;
+        font-weight: 700;
+        margin-bottom: 5px;
+        margin-left: 25px;
+    }
+    .cube {
+        width: 12.2px;
+        height: 10px;
+        border-radius: 2px;
+        margin-right: 5px;
+        margin-left: 15px;
+    }
+    .sales-header {
+        display: flex;
+        width: 100%;
+        height: 25px;
+    }
+    .sales-header > div {
+        display: flex;
+    }
+    .content-sales {
+        width: 300px;
+        height: 200px;
+        display: block;
+        padding-top: 20px;
+    }
+    .blue-shadow {
+        position: relative;
+        width: 1px;
+        height: 1px;
+        border-radius: 100%;
+        margin-top: 50px;
+        box-shadow: 150px 250px 275px 250px #E2F8F0B2;
+        opacity: 1;
+    }
+    .sales-light {
+        width: 300px;
+        height: 246px;
+        padding: 20px 0px 0px 0px;
+        margin-left: 25px;
+        margin-top: 25px;
+        border-radius: 8px;
+        opacity: 0px;
+        box-shadow: 250px 350px 475px 350px #E2F8F0B2;
+        background-color: rgb(255, 255, 255);
+        position: absolute;
+    }
+    .customer-growth {
+        width: 103px;
+        height: 100px;
+        padding: 16px 18px 16px 18px;
+        margin-left: 215px;
+        margin-top: -25px;
+        border-radius: 8px;
+        opacity: 0px;
+        box-shadow: 250px 350px 475px 350px #E2F8F0B2;
+        background-color: rgb(255, 255, 255);
+        position: absolute;
+    }
     .shadoworange {
         width: 1px;
         height: 1px;
@@ -160,41 +356,58 @@ export default {
     }
     .header2 {
         display: flex;
-        justify-content: center;
-        align-items: top;
+        width: 350px;
+        justify-content: left;
     }
     .container {
-        max-width: 1080px;
+        max-width: 100%;
         width: 100%;
-    }
-    
-    .contentheader1 {
-        justify-content:left;
+        margin-top: 0px;
         display: flex;
+        flex-direction: column;
+        align-items: center;
     }
-    
-    .contentheader2 {
+    .headercontent1 {
         justify-content: left;
         display: flex;
+        flex-direction: row;
     }
-    
+    .contentheader1 {
+        justify-content: left;
+        display: block;
+        flex-direction: row;
+    }
+    .contentheader2 {
+        display: block;
+        justify-content: left;
+        flex-direction: column;
+        width: 350px;
+
+        height: 400px;
+    }
     .text1header2 {
         font-family: "Inter", sans-serif;
         font-size: 32px;
         font-weight: 700;
-        margin-top: 50px;
-        margin-left: 25px;
-        max-width: 300px;
-        width: auto;
+        margin-top: 0px;
+        margin-left: 20px;
+        width: 90%;
+        text-align: left;
+    }
+    .textsheader2 {
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        width: 100%;
     }
     .text2header2-mob {
         font-family: "Inter", sans-serif;
         font-size: 16px;
         font-weight: 600;
-        margin-top: 50px;
-        margin-left: 10px;
-        max-width: 300px;
-        width: auto;
+        margin-top: 20px;
+        margin-left: 15px;
+        width: 300px;
+        text-align: left;
         display: block;
     }
     .text2header2 {
@@ -204,46 +417,47 @@ export default {
         border: 0px;
         border-bottom: 2px solid grey;
         width: 30px;
-        margin-left: 30px;
-        margin-top: 50px;
-        height: 10px;
-    }
-    .textsheader2 {
-        display: flex;
+        margin-left: 20px;
+        margin-bottom: 69px;
     }
     .field {
         background-color: transparent;
         border: 0px transparent;
         outline: 0px transparent;
         height: 37px;
-        width: 219px;
+        width: 80%;
         margin-bottom: 15px;
         border-bottom: 1px solid grey;
-
     }
     .inputemail {
-        max-width: 471px;
+        width: 80%;
+        margin-top: 40px;
+        display: flex;
         margin-left: 20px;
-        margin-top: 50px;
-        scale: 1;
+        justify-content: center;
     }
     .emailbutton {
         height: 36px;
-        scale: 1;
-        margin-left: 15px;
         border-radius: 100px;
-        width: 108px;
+        width: 128px;
+        margin-left: 10px;
         background-color: black;
         border: 0px transparent;
-        padding: 8px, 16px, 8px, 16px;
-        
+        cursor: pointer;
+        display: flex;
+        scale: 1.1;
+        justify-content: center;
+        align-items: center;
+        transition: 500ms ease;
+    }
+    .emailbutton:active {
+        scale: 1;
     }
     .emailbutton-h3 {
         font-size: 12px;
         color: white;
-        line-height: 20px;
         font-weight: 700;
+        margin: 0;
     }
 }
-
 </style>
