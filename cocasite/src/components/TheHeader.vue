@@ -21,7 +21,7 @@
             <div class="inputemail">
               <input type="email" placeholder="Enter your email" class="field">
               <button class="emailbutton">
-                <h3 class="emailbutton-h3">Try for free</h3>
+                <h1 class="emailbutton-h3">Try for free</h1>
               </button>
             </div>
           </div>
@@ -29,14 +29,14 @@
         <div class="contentheader2">
           <div class="blue-shadow"></div>
           <div class="sales-light">
-            <h5 class="sales-text1">
+            <h1 class="sales-text1">
               Sales Report
-            </h5>
+            </h1>
             <div class="content-sales">
               <div class="sales-header">
                 <div v-for="(product, index) in products" :key="index">
                   <div class="cube" :style="{ backgroundColor: product.color }"></div>
-                  <h6 class="text-product">{{ product.name }}</h6>
+                  <h1 class="text-product">{{ product.name }}</h1>
                 </div>
               </div>
               <div class="container-nl-root">
@@ -67,6 +67,33 @@
                 <div class="bar" :style="{backgroundColor: date.color, height: date.height}"></div>
                 <h1 class="date">{{ date.month }}</h1>
               </div>
+            </div>
+          </div>
+          <div class="black-statictic">
+            <div class="black-sales">
+                <div class="black-sales-text1" v-for="(sale, index) in sales" :key="index" >
+                    <h1 class="black-sales-text1-css" :style="{color: sale.color, fontSize: sale.size, fontWeight: sale.weight}">{{sale.text}}</h1>
+                </div>
+                <div class="black-raising-root">
+                    <div class="black-raising-text2" v-for="(raising, index) in raisings" :key="index" >
+                        <h1 class="black-raising-text2-css" :style="{color: raising.color, fontSize: raising.size, fontWeight: raising.weight}">{{raising.text}}</h1>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="black-marketing">
+                <div class="black-marketing-text1" v-for="(marketing, index) in marketings" :key="index" >
+                    <h1 class="black-marketing-text1-css" :style="{color: marketing.color, fontSize: marketing.size, fontWeight: marketing.weight}">{{marketing.text}}</h1>
+                </div>
+                <div class="black-recession-root">
+                    <div class="black-recession-text2" v-for="(recession, index) in recessions" :key="index" >
+                        <h1 class="black-recession-text2-css" :style="{color:recession.color, fontSize: recession.size, fontWeight: recession.weight}">{{recession.text}}</h1>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="black-marketing">
+
             </div>
           </div>
         </div>
@@ -118,6 +145,62 @@ export default {
         {
             number: '0'
         },
+      ],
+      sales: [
+        {   
+            weight: '600',
+            size: '14px',
+            color: 'grey',
+            text: 'Sales'
+        },
+        {   
+            weight: '700',
+            size: '20px',
+            color: 'white',
+            text: '$31,092'
+        },
+      ],
+      raisings: [
+        {
+            weight: '600',
+            size: '14px',
+            color: '#60D39C',
+            text: '+4.2%'
+        },
+        {
+            weight: '400',
+            size: '14px',
+            color: '#5C616E',
+            text: 'from last year'
+        },
+      ],
+      marketings: [
+        {   
+            weight: '600',
+            size: '14px',
+            color: 'grey',
+            text: 'Marketing'
+        },
+        {   
+            weight: '700',
+            size: '20px',
+            color: 'white',
+            text: '$29,128'
+        },
+      ],
+      recessions: [
+        {
+            weight: '600',
+            size: '14px',
+            color: '#E35454',
+            text: '-1.2%'
+        },
+        {
+            weight: '400',
+            size: '14px',
+            color: '#5C616E',
+            text: 'from last year'
+        },
       ]
     }
   }
@@ -128,6 +211,85 @@ export default {
 
 <style scoped>
 @media (min-width: 1080px) {
+    .black-sales-text1-css {
+        font-weight: 400;
+        font-family: 'Inter', sans-serif;
+        margin-bottom: 5px;
+    }
+    .black-sales-text1 {
+        display: block;
+        width: 141px;
+        height: auto;
+    }
+    .black-raising-text2-css {
+        font-weight: 400;
+        font-family: 'Inter', sans-serif;
+        margin-bottom: 5px;
+    }
+    
+    .black-raising-text2 {
+        display: flex;
+        flex-direction: row;
+        height: auto;
+        margin-right: 4px;
+    }
+    .black-raising-root {
+        display: flex;
+        flex-direction: row;
+        width: 145px;
+        height: auto;
+    }
+    .black-marketing-text1-css {
+        font-weight: 400;
+        font-family: 'Inter', sans-serif;
+        margin-bottom: 5px;
+    }
+    .black-marketing-text1 {
+        display: block;
+        width: 141px;
+        height: auto;
+    }
+    .black-recession-text2-css {
+        font-weight: 400;
+        font-family: 'Inter', sans-serif;
+        margin-bottom: 5px;
+    }
+    
+    .black-recession-text2 {
+        display: flex;
+        flex-direction: row;
+        height: auto;
+        margin-right: 4px;
+    }
+    .black-recession-root {
+        display: flex;
+        flex-direction: row;
+        width: 145px;
+        height: auto;
+    }
+    .black-sales {
+        display: block;
+        width: 141px;
+        height: auto;
+        margin-right: 25px;
+    }
+    .black-marketing {
+        display: block;
+        width: 141px;
+        height: auto;
+    }
+    .black-statictic {
+        width: 300px;
+        height: 60px;
+        display: flex;
+        flex-direction: row;
+        background-color: black;
+        border-radius: 10px;
+        position: relative;
+        top: 365px;
+        padding: 20px;
+        padding-top: 12px;
+    }
     .text-li {
         color: black;
         font-size: 12px;
@@ -162,7 +324,7 @@ export default {
         width: 103px;
         height: 110px;
         padding: 16px 18px 16px 18px;
-        margin-left: 225px;
+        margin-left: 222px;
         margin-top: 35px;
         border-radius: 8px;
         opacity: 0px;
@@ -244,8 +406,8 @@ export default {
     .text-product {
         font-family: 'Inter', sans-serif;
         font-weight: 400;
-        size: 14px;
-        top: -1px;
+        font-size: 11px;
+        top: -2px;
         position: relative;
         margin-right: 25px;
     }
@@ -297,8 +459,7 @@ export default {
         width: 319px;
         height: 246px;
         padding: 20px 0px 0px 0px;
-        margin-right: 550px;
-        margin-top: 100px;
+        top: 200px;
         border-radius: 8px;
         opacity: 0px;
         padding-left: 20px;
@@ -311,8 +472,7 @@ export default {
         width: 133px;
         height: 120px;
         padding-left: 10px;
-        margin-left: 250px;
-        margin-top: 40px;
+        top: 110px;
         border-radius: 8px;
         opacity: 0px;
         box-shadow: 15px 15px 100px 0.1px rgb(204, 204, 204);
@@ -337,6 +497,7 @@ export default {
         display: flex;
         justify-content: center;
         align-items: top;
+        height: 600px;
     }
     .container {
         max-width: 1080px;
@@ -349,6 +510,8 @@ export default {
     }
     .contentheader2 {
         justify-content: right;
+        width:360px;
+        height: 520px;
         display: block;
     }
     .text1header2 {
@@ -420,6 +583,87 @@ export default {
 }
 
 @media (max-width: 1079px) {
+    .black-sales-text1-css {
+        font-weight: 400;
+        font-family: 'Inter', sans-serif;
+        margin-bottom: 5px;
+    }
+    .black-sales-text1 {
+        display: block;
+        width: 141px;
+        height: auto;
+    }
+    .black-raising-text2-css {
+        font-weight: 400;
+        font-family: 'Inter', sans-serif;
+        margin-bottom: 5px;
+    }
+    
+    .black-raising-text2 {
+        display: flex;
+        flex-direction: row;
+        height: auto;
+        margin-right: 4px;
+    }
+    .black-raising-root {
+        display: flex;
+        flex-direction: row;
+        width: 145px;
+        height: auto;
+    }
+    .black-marketing-text1-css {
+        font-weight: 400;
+        font-family: 'Inter', sans-serif;
+        margin-bottom: 5px;
+    }
+    .black-marketing-text1 {
+        display: block;
+        width: 141px;
+        height: auto;
+    }
+    .black-recession-text2-css {
+        font-weight: 400;
+        font-family: 'Inter', sans-serif;
+        margin-bottom: 5px;
+    }
+    
+    .black-recession-text2 {
+        display: flex;
+        flex-direction: row;
+        height: auto;
+        margin-right: 4px;
+    }
+    .black-recession-root {
+        display: flex;
+        flex-direction: row;
+        width: 145px;
+        height: auto;
+    }
+    .black-sales {
+        display: block;
+        width: 141px;
+        height: auto;
+        margin-right: 0px;
+        scale: 0.8;
+    }
+    .black-marketing {
+        display: block;
+        width: 141px;
+        height: auto;
+        scale: 0.8;
+    }
+    .black-statictic {
+        width: 295px;
+        height: 50px;
+        background-color: black;
+        border-radius: 10px;
+        position: relative;
+        display: flex;
+        top: 315px;
+        padding-left: 5px;
+        padding-top: 10px;
+        padding-bottom: 20px;
+    }
     .text-li {
         color: black;
         font-size: 12px;
@@ -495,8 +739,8 @@ export default {
     .text-product {
         font-family: 'Inter', sans-serif;
         font-weight: 400;
-        size: 14px;
-        top: -1px;
+        font-size: 11px;
+        top: -2px;
         position: relative;
         margin-right: 10px;
     }
@@ -570,7 +814,7 @@ export default {
         width: 103px;
         height: 110px;
         padding: 16px 18px 16px 18px;
-        margin-left: 215px;
+        margin-left: 210px;
         margin-top: -25px;
         border-radius: 8px;
         opacity: 0px;
@@ -618,7 +862,7 @@ export default {
         flex-direction: column;
         width: 350px;
 
-        height: 400px;
+        height: 460px;
     }
     .text1header2 {
         font-family: "Inter", sans-serif;
