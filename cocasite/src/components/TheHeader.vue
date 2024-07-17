@@ -1,77 +1,237 @@
 <template>
     <div class="header2">
-        <div class="container">
-            <div class="contentheader1">
-                <div class="shadoworange">
+      <div class="container">
+        <div class="contentheader1">
+          <div class="shadoworange"></div>
+          <div class="textsheader2">
+            <h1 class="text1header2">
+              Digitally forward creative
+            </h1>
+          </div>
+          <div class="textsheader2">
+            <div class="headercontent1">
+              <div class="greyline"></div>
+              <h1 class="text2header2">
+                When it comes to interactive marketing, we've got you covered. Be where the world is going
+              </h1>
+              <h1 class="text2header2-mob">
+                Our biggest challenge is making sure we're always designing and building products that will help you run your business better.
+              </h1>
+            </div>
+            <div class="inputemail">
+              <input type="email" placeholder="Enter your email" class="field">
+              <button class="emailbutton">
+                <h3 class="emailbutton-h3">Try for free</h3>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="contentheader2">
+          <div class="blue-shadow"></div>
+          <div class="sales-light">
+            <h5 class="sales-text1">
+              Sales Report
+            </h5>
+            <div class="content-sales">
+              <div class="sales-header">
+                <div v-for="(product, index) in products" :key="index">
+                  <div class="cube" :style="{ backgroundColor: product.color }"></div>
+                  <h6 class="text-product">{{ product.name }}</h6>
                 </div>
-                <div class="textsheader2">
-                    <h1 class="text1header2">
-                        Digitally forward creative
+              </div>
+              <div class="container-nl-root">
+                <div class="container-nl">
+                  
+                </div>
+                <div class="content-center-sales">
+                    <Line class="line-config"></Line>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="customer-growth">
+            <div class="title-growth">
+                <h1 class="title-text">Customer Growth</h1>
+            </div>
+            <div class="col-left">
+                <div class="left-info" v-for="(num, index) in nums" :key="index">
+                    <h1 class="text-li">
+                        {{ num.number }}
                     </h1>
                 </div>
-                <div class="textsheader2">
-                    <div class="headercontent1">
-                        <div class="greyline"></div>
-                        <h1 class="text2header2">
-                            When it comes to interactive marketing, we've got you covered. Be where the world is going
-                        </h1>
-                        <h1 class="text2header2-mob">
-                            Our biggest challenge is making sure we're always designing and building products that will help you run your business better.
-                        </h1>
-                    </div>
-                    <div class="inputemail">
-                        <input type="email" placeholder="Enter your email" class="field">
-                        <button class="emailbutton">
-                            <h3 class="emailbutton-h3">Try for free</h3>
-                        </button>
-                    </div>
-                </div>
             </div>
-            <div class="contentheader2">
-                <div class="blue-shadow"></div>
-                <div class="sales-light">
-                    <h5 class="sales-text1">
-                        Sales Report
-                    </h5>
-                    <div class="content-sales">
-                        <div class="sales-header">
-                            <div v-for="(product, index) in products" :key="index">
-                                <div class="cube" :style="`background-color: ${product.color}`">
-
-                                </div>
-                                <h6 class="text-product">{{ product.name }}</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="customer-growth"></div>
+            
+            <div v-for="(date, index) in dates" :key="index" class="row-growth">
+                
+              <div class="bar-root">
+                <div class="bar" :style="{backgroundColor: date.color, height: date.height}"></div>
+                <h1 class="date">{{ date.month }}</h1>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
 </template>
-
+  
 <script>
+import Line from '../components/ChartComponent.vue'
 export default {
-    name: "TheHeader",
-    data() {
-        return {
-            products: [
-                {
-                    color: "blue",
-                    name: "My Sales",
-                },
-                {
-                    color: "red",
-                    name: "My Product"
-                }
-            ]
-        };
+  name: "TheHeader",
+  components: { Line },
+  data() {
+    return {
+      products: [
+        {   
+          color: "blue",
+          name: "My Producs",
+        },
+        {
+          color: "red",
+          name: "Competitor"
+        }
+      ],
+      dates: [
+        {   
+            height: '78px',
+            month: 'Jan',
+            color: '#2280FF'
+        },
+        {   
+            height: '68px',
+            month: 'Feb',
+            color: '#20BFF7'
+        },
+        {   
+            height: '63px',
+            month: 'Mar',
+            color: '#EB6E46'
+        },
+      ],
+      nums: [
+        {
+            number: '10k'
+        },
+        {
+            number: '5k'
+        },
+        {
+            number: '0'
+        },
+      ]
     }
-};
+  }
+}
 </script>
+
+
 
 <style scoped>
 @media (min-width: 1080px) {
+    .text-li {
+        color: black;
+        font-size: 12px;
+        font-weight: 400;
+        font-family: 'Inter', sans-serif;
+        justify-content: end;
+    }
+    .title-growth {
+        position: absolute;
+        font-family: 'Inter', sans-serif;
+        color: black;
+        font-weight: 400;
+        margin-right: 25px;
+        margin-bottom: 25px;
+    }
+    .col-left {
+        display: flex;
+        flex-direction: column; 
+        position: relative;
+        left: -5px;
+        margin-top: 22px; 
+    }
+
+    .left-info {
+        margin-bottom: 15px;
+        justify-content: end;
+    }
+    .title-text {
+        font-size: 11px;
+    }
+    div.customer-growth {
+        width: 103px;
+        height: 110px;
+        padding: 16px 18px 16px 18px;
+        margin-left: 225px;
+        margin-top: 35px;
+        border-radius: 8px;
+        opacity: 0px;
+        justify-content: center;
+        display: flex;
+        box-shadow: 15px 15px 150px 1px #b3b3b3b2;
+        background-color: rgb(255, 255, 255);
+        position: absolute;
+    }
+    .row-growth {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 10px;
+        width: 130px;
+        justify-content: end;
+        margin-right: 5px;
+        position: relative;
+        padding-top: 115px;
+      }
+    .bar-root {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 12px;
+        padding-left: 5px;
+      }
+    div.bar {
+        width: 12px;
+        border-radius: 25px;
+      }
+    .date {
+        margin-top: 5px;
+        font-size: 10px;
+        font-family: 'Inter', sans-serif;
+        color: grey;
+        font-weight: 400;
+      }
+    .line-config {
+        scale: 1;
+    }
+    div.container-nl {
+        display: block;
+        flex-direction: row;
+    }
+    div.container-nl-root {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 25px;
+    }
+    div.number-left-root {
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+    }
+    div.content-center-sales {
+        width: 100%;
+        height: 170px;
+        padding: 0px;
+      }
+    h1.number-left {
+        color: grey;
+        font-family: 'Inter', sans-serif;
+        font-weight: 400;
+        margin-bottom: 10px;
+        font-size: 14px;
+        align-items: end;
+        justify-content: end;
+    }
     .blue-shadow {
         position: relative;
         width: 1px;
@@ -130,7 +290,8 @@ export default {
         width: 300px;
         height: 200px;
         display: block;
-        padding-top: 20px;
+        padding-top: 10px;
+        margin-right: 25px;
     }
     .sales-light {
         width: 319px;
@@ -147,9 +308,9 @@ export default {
         position: absolute;
     }
     .customer-growth {
-        width: 113px;
+        width: 133px;
         height: 120px;
-        padding: 16px 18px 16px 18px;
+        padding-left: 10px;
         margin-left: 250px;
         margin-top: 40px;
         border-radius: 8px;
@@ -259,6 +420,78 @@ export default {
 }
 
 @media (max-width: 1079px) {
+    .text-li {
+        color: black;
+        font-size: 12px;
+        font-weight: 400;
+        font-family: 'Inter', sans-serif;
+        justify-content: end;
+    }
+    .title-growth {
+        position: absolute;
+        font-family: 'Inter', sans-serif;
+        color: black;
+        font-weight: 400;
+        margin-right: 25px;
+        margin-bottom: 25px;
+    }
+    .col-left {
+        display: flex;
+        flex-direction: column; 
+        position: relative;
+        left: -5px;
+        margin-top: 22px; 
+    }
+
+    .left-info {
+        margin-bottom: 15px;
+        justify-content: end;
+    }
+    .title-text {
+        font-size: 11px;
+    }
+    .row-growth {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 10px;
+        width: 130px;
+        justify-content: end;
+        margin-right: 5px;
+        position: relative;
+        padding-top: 115px;
+      }
+    .bar-root {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 12px;
+        padding-left: 5px;
+      }
+    div.bar {
+        width: 12px;
+        border-radius: 25px;
+      }
+    .date {
+        margin-top: 5px;
+        font-size: 10px;
+        font-family: 'Inter', sans-serif;
+        color: grey;
+        font-weight: 400;
+      }
+    .title-growth {
+        position: absolute;
+        font-family: 'Inter', sans-serif;
+        color: black;
+        font-weight: 400;
+        margin-right: 25px;
+    }
+    .title-text {
+        font-size: 11px;
+    }
+    .line-config {
+        scale: 0.9;
+    }
     .text-product {
         font-family: 'Inter', sans-serif;
         font-weight: 400;
@@ -333,14 +566,16 @@ export default {
         background-color: rgb(255, 255, 255);
         position: absolute;
     }
-    .customer-growth {
+    div.customer-growth {
         width: 103px;
-        height: 100px;
+        height: 110px;
         padding: 16px 18px 16px 18px;
         margin-left: 215px;
         margin-top: -25px;
         border-radius: 8px;
         opacity: 0px;
+        justify-content: center;
+        display: flex;
         box-shadow: 15px 15px 150px 1px #b3b3b3b2;
         background-color: rgb(255, 255, 255);
         position: absolute;
