@@ -306,7 +306,6 @@ export default {
         position: absolute;
         top: 485px;
         padding: 20px;
-        padding-top: -12px;
     }
     .text-li {
         color: black;
