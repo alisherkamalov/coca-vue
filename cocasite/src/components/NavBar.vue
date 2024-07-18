@@ -142,6 +142,10 @@ export default {
   }
   .burger-container {
     margin-left: auto;
+    background-color: transparent;
+  }
+  .nav {
+    background-color: transparent;
   }
   a {
     margin-right: 25px;

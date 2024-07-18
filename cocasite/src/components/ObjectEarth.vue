@@ -77,13 +77,13 @@ onUnmounted(() => {
 
 <template>
   <div class='root-div'>
-    <canvas ref="experience" id="canvas" style="min-width:540px; min-height: 500px; max-width: 500px; margin: auto;"></canvas>
+    <canvas ref="experience" id="canvas" style="min-width:540px; min-height: 500px; max-width: 500px; margin: auto; overflow: hidden;" class="earth"</canvas>
   </div>
 </template>
-<style scoped>
+<style>
     .root-div {
         height: 500px;
-        max-width: 300px; 
+        max-width: 100px; 
         min-width: 300px; 
         max-height: 400px; 
         left: 10px;

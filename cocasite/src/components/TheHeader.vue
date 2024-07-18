@@ -1,4 +1,5 @@
 <template>
+    <div class="hidden">
     <div class="header2">
       <div class="container">
         <div class="contentheader1">
@@ -102,6 +103,8 @@
         </div>
       </div>
     </div>
+    </div>
+    
 </template>
   
 <script>
@@ -213,7 +216,7 @@ export default {
 
 
 
-<style scoped>
+<style>
 @media (min-width: 1080px) {
     .root-earth {
         width: 350px;
@@ -304,8 +307,9 @@ export default {
         background-color: black;
         border-radius: 10px;
         position: absolute;
-        top: 485px;
+        top: 405px;
         padding: 20px;
+        padding-top: -12px;
     }
     .text-li {
         color: black;
@@ -342,7 +346,7 @@ export default {
         height: 110px;
         padding: 16px 18px 16px 18px;
         margin-left: 222px;
-        margin-top: 35px;
+        margin-top: -35px;
         border-radius: 8px;
         opacity: 0px;
         justify-content: center;
@@ -476,7 +480,7 @@ export default {
         width: 319px;
         height: 246px;
         padding: 20px 0px 0px 0px;
-        top: 200px;
+        top: 120px;
         border-radius: 8px;
         opacity: 0px;
         padding-left: 20px;
