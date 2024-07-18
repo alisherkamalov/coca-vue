@@ -599,6 +599,11 @@ export default {
 }
 
 @media (max-width: 1079px) {
+    .root-earth {
+        min-width: 300px;
+        max-width: 1079px;
+        overflow: auto;
+    }
     .black-sales-text1-css {
         font-weight: 400;
         font-family: 'Inter', sans-serif;
