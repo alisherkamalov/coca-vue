@@ -5,7 +5,7 @@
 
 </template>
 <script>
-import Cube from '../components/ObjectCube.vue';
+import Cube from './ObjectEarth.vue';
 export default {
   name: "TheOverview",
   components: { Cube },

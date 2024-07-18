@@ -49,6 +49,9 @@
               </div>
             </div>
           </div>
+          <div class="root-earth">
+            <Earth class="earth-config"</Earth>
+          </div>
           <div class="customer-growth">
             <div class="title-growth">
                 <h1 class="title-text">Customer Growth</h1>
@@ -103,9 +106,10 @@
   
 <script>
 import Line from '../components/ChartComponent.vue'
+import Earth from './ObjectEarth.vue'
 export default {
   name: "TheHeader",
-  components: { Line },
+  components: { Line, Earth },
   data() {
     return {
       products: [
@@ -211,6 +215,19 @@ export default {
 
 <style scoped>
 @media (min-width: 1080px) {
+    .root-earth {
+        width: 350px;
+        height: 200px;
+        margin-right: 125px;
+        display: flex;
+    }
+    .earth-config {
+        width: 100px;
+        height: 100px;
+        margin-top: 0px;
+        margin-right: 0px;
+
+    }
     .black-sales-text1-css {
         font-weight: 400;
         font-family: 'Inter', sans-serif;
@@ -285,10 +302,10 @@ export default {
         flex-direction: row;
         background-color: black;
         border-radius: 10px;
-        position: relative;
-        top: 365px;
+        position: absolute;
+        top: 485px;
         padding: 20px;
-        padding-top: 12px;
+        padding-top: -12px;
     }
     .text-li {
         color: black;
@@ -400,7 +417,7 @@ export default {
         height: 1px;
         border-radius: 100%;
         margin-top: 50px;
-        box-shadow: 250px 350px 475px 350px #E2F8F0B2;
+        box-shadow: 250px 350px 475px 250px #E2F8F0B2;
         opacity: 1;
     }
     .text-product {
@@ -659,7 +676,7 @@ export default {
         border-radius: 10px;
         position: relative;
         display: flex;
-        top: 315px;
+        top: -80px;
         padding-left: 5px;
         padding-top: 10px;
         padding-bottom: 20px;
@@ -815,7 +832,7 @@ export default {
         height: 110px;
         padding: 16px 18px 16px 18px;
         margin-left: 210px;
-        margin-top: -25px;
+        margin-top: -405px;
         border-radius: 8px;
         opacity: 0px;
         justify-content: center;
